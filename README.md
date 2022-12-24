@@ -5,7 +5,7 @@
 <br>
 
 
-**Deployed Website** : [https://byu-sell-935.netlify.app](https://byu-sell-935.netlify.app/)<br/>
+**Deployed Website** (might be slow as free tier server are used) : [https://byu-sell-935.netlify.app](https://byu-sell-935.netlify.app/)<br/>
 
 
 

@@ -1,61 +1,38 @@
 import React from "react";
+import { func } from "../../utils/timeCalc";
 
 const Item = ({
   product,
   setselectedProduct,
-  setshowModal,
   setshowBuyModal,
 }) => {
-  const handelViewProduct = () => {
-    setselectedProduct(product);
-    setshowModal(true);
-  };
   const handelBuyProduct = () => {
     setselectedProduct(product);
     setshowBuyModal(true);
   };
   return (
-    <div className="relative  shadow-xl  rounded-md transform hover:translate-y-2 hover:shadow-xl transition duration-300">
-      <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-md bg-gray-200  lg:aspect-none lg:h-80 sm:h-80 md:h-80">
-        <img
-          src={product.image}
-          alt=""
-          className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-        />
-      </div>
-      <div className="p-4 ">
-        <div className="flex justify-between">
-          <h3 className="text-sm text-black font-semibold">
-            <span aria-hidden="true" className="" />
-            {product.name}
-          </h3>
-          <p className="text-sm font-medium text-gray-900">₹{product.price}</p>
-        </div>
-        <div className="flex justify-between">
+    <div class="bg-white p-6 mt-3 rounded-lg shadow-lg border-2 hover:shadow-xl transition duration-300 cursor-pointer">
+      <div className="flex justify-between">
+        <div>
+          <h2 class="text-2xl font-bold  text-gray-800">{product.name}</h2>
           <p className=" text-xs text-gray-500">
             by <span className="text-gray-700">{product.owner.name}</span>
           </p>
-          {product.isSold ? (
-            <p className="text-xs font-bold text-green-600">SOLD</p>
-          ) : (
-            <p className="text-xs font-bold text-red-600">UNSOLD</p>
-          )}
+          <p className=" text-xs text-gray-500">
+            posted on <span className="text-gray-700">{func(product.createdAt)}</span>
+          </p>
         </div>
-        <div className="flex justify-around">
+        <div className="">
+          <p className="flex justify-end text-lg font-bold text-green-600">₹{product.price}</p>
           <div
-            className="cursor-pointer flex justify-center px-10 py-1 mt-2  font-semibold rounded-md bg-indigo-600 hover:bg-indigo-500 text-white"
-            onClick={handelViewProduct}
-          >
-            View
-          </div>
-          <div
-            className="cursor-pointer flex justify-center px-10 py-1 mt-2  font-semibold rounded-md border-2 border-indigo-500 hover:bg-indigo-500 hover:text-white "
+            className="cursor-pointer flex justify-center px-10 py-1  mt-1 font-semibold rounded-md border-2 border-indigo-500 hover:bg-indigo-500 hover:text-white "
             onClick={handelBuyProduct}
           >
             Buy
           </div>
         </div>
       </div>
+      <p class="text-gray-700 font-thin text-sm leading-4 mt-3 mr-20">{product.desc}</p>
     </div>
   );
 };

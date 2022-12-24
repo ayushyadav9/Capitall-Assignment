@@ -9,19 +9,8 @@ const AddProduct = () => {
     name: "",
     price: "",
     desc: "",
-    image: null,
   });
-  function getBase64(file) {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      setformdata({ ...formData, image: reader.result });
-      return;
-    };
-    reader.onerror = function (error) {
-      console.log("Error: ", error);
-    };
-  }
+
   const handelAdd = (e) => {
     e.preventDefault();
     setisLoading(true);
@@ -42,7 +31,6 @@ const AddProduct = () => {
           name: "",
           price: "",
           desc: "",
-          image: null,
         });
         toast.success("Product added successfuly");
       });
@@ -75,14 +63,13 @@ const AddProduct = () => {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 type="text"
               />
-              {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="grid-last-name"
               >
-                Price
+                Price (₹)
               </label>
               <input
                 onChange={(e) => {
@@ -90,7 +77,7 @@ const AddProduct = () => {
                 }}
                 value={formData.price}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                type="text"
+                type="number"
               />
             </div>
           </div>
@@ -112,25 +99,7 @@ const AddProduct = () => {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               ></textarea>
             </div>
-            <div className="flex justify-between w-full px-3">
-              <div className="md:flex md:items-center">
-                <label className="block">
-                  <span className="sr-only">Choose profile photo</span>
-                  <input
-                    type="file"
-                    onChange={(e) => {
-                      getBase64(e.target.files[0]);
-                    }}
-                    className="block w-full text-sm text-slate-500
-                    file:mr-4 file:py-2 file:px-4
-                    file:rounded-full file:border-0
-                    file:text-sm file:font-semibold
-                    file:bg-violet-50 file:text-violet-700
-                    hover:file:bg-violet-100
-                    "
-                  />
-                </label>
-              </div>
+            <div className="flex justify-end w-full px-3">
               <button
                 onClick={handelAdd}
                 className="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"

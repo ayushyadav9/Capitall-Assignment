@@ -4,12 +4,11 @@ const User = require("../../models/User");
 
 module.exports.addProduct = async (req, res) => {
   try {
-    let { name, price, image, desc } = req.body;
+    let { name, price, desc } = req.body;
     let user = req.user;
     let prod = new Products({
       name: name,
       price: price,
-      image: image,
       desc: desc,
       owner: user._id,
       createdAt: new Date().getTime(),

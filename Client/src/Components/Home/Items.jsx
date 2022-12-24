@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import Item from "./Item";
-import ProductModal from "./ProductModal";
 import { baseURL } from "../../utils/api";
 import Loader from "../../utils/Loader";
 import ConfirmBuy from "../Util/ConfirmBuy";
 
 export default function Items() {
   const [selectedProduct, setselectedProduct] = useState(null);
-  const [showModal, setshowModal] = useState(false);
   const [showBuyModal, setshowBuyModal] = useState(false);
   const [products, setProducts] = useState(null);
 
@@ -28,14 +26,6 @@ export default function Items() {
 
   return (
     <div>
-      {showModal && (
-        <ProductModal
-          product={selectedProduct}
-          setshowModal={setshowModal}
-          setProducts={setProducts}
-          products={products}
-        />
-      )}
       {showBuyModal && (
         <ConfirmBuy
           product={selectedProduct}
@@ -44,7 +34,7 @@ export default function Items() {
           products={products}
         />
       )}
-      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-5 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-5 sm:px-6 lg:max-w-5xl lg:px-8">
         <div className="text-center mb-16">
           <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
             Products for <span className="text-indigo-600">Sale</span>
@@ -52,14 +42,13 @@ export default function Items() {
         </div>
         {products ? (
           products.length > 0 ? (
-            <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <div className="mt-6  mx-auto">
               {products.map((product) => (
                 <Item
                   key={product._id}
                   product={product}
                   setselectedProduct={setselectedProduct}
                   setshowBuyModal={setshowBuyModal}
-                  setshowModal={setshowModal}
                 />
               ))}
             </div>
