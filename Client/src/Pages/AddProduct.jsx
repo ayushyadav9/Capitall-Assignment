@@ -24,7 +24,6 @@ const AddProduct = () => {
   }
   const handelAdd = (e) => {
     e.preventDefault();
-    console.log(formData);
     setisLoading(true);
     fetch(baseURL + "/addProduct", {
       method: "POST",
@@ -39,7 +38,6 @@ const AddProduct = () => {
       })
       .then((data) => {
         setisLoading(false);
-        console.log(data);
         setformdata({
           name: "",
           price: "",
@@ -65,7 +63,7 @@ const AddProduct = () => {
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-first-name"
+                htmlFor="grid-first-name"
               >
                 Product Name
               </label>
@@ -82,7 +80,7 @@ const AddProduct = () => {
             <div className="w-full md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
+                htmlFor="grid-last-name"
               >
                 Price
               </label>
@@ -101,7 +99,7 @@ const AddProduct = () => {
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
+                htmlFor="grid-password"
               >
                 Product Description
               </label>

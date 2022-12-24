@@ -3,17 +3,17 @@ import React from "react";
 const ProductModal = ({ product, setshowModal }) => {
   return (
     <div
-      class="relative z-10"
+      className="relative z-10"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
     >
-      <div class="fixed inset-0 bg-black bg-opacity-80 transition-opacity"></div>
-      <div class="fixed inset-0 z-10 overflow-y-auto">
-        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-          <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl">
-            <div class="antialiased">
-              <div class="bg-indigo-700 font-bold text-lg text-white md:text-center py-2 px-4 flex justify-between">
+      <div className="fixed inset-0 bg-black bg-opacity-80 transition-opacity"></div>
+      <div className="fixed inset-0 z-10 overflow-y-auto">
+        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl">
+            <div className="antialiased">
+              <div className="bg-indigo-700 font-bold text-lg text-white md:text-center py-2 px-4 flex justify-between">
                 <div className="ml-5">{product.name}</div>
                 <div
                   className="cursor-pointer"
@@ -35,10 +35,10 @@ const ProductModal = ({ product, setshowModal }) => {
                   </svg>
                 </div>
               </div>
-              <div class="py-6">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3">
-                  <div class="flex flex-col md:flex-row -mx-4">
-                    <div class="md:flex-1 px-4">
+              <div className="py-6">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3">
+                  <div className="flex flex-col md:flex-row -mx-4">
+                    <div className="md:flex-1 px-4">
                       <div className="flex justify-center">
                         <img
                           className="max-h-96"
@@ -47,43 +47,43 @@ const ProductModal = ({ product, setshowModal }) => {
                         ></img>
                       </div>
                     </div>
-                    <div class="md:flex-1 px-4">
-                      <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
+                    <div className="md:flex-1 px-4">
+                      <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
                         {product.name}
                       </h2>
                       {product.boughtBy && (
-                        <p class="text-gray-500 text-sm">
+                        <p className="text-gray-500 text-sm">
                           Bought by{" "}
-                          <span class="text-indigo-600">
+                          <span className="text-indigo-600">
                             {product.boughtBy.name}
                           </span>
                         </p>
                       )}
 
-                      <div class="flex items-center space-x-4 my-4">
+                      <div className="flex items-center space-x-4 my-4">
                         <div>
-                          <div class="rounded-lg bg-gray-100 flex py-2 px-3">
-                            <span class="text-indigo-400 mr-1 mt-1">₹</span>
-                            <span class="font-bold text-indigo-600 text-3xl">
+                          <div className="rounded-lg bg-gray-100 flex py-2 px-3">
+                            <span className="text-indigo-400 mr-1 mt-1">₹</span>
+                            <span className="font-bold text-indigo-600 text-3xl">
                               {product.price}
                             </span>
                           </div>
                         </div>
-                        <div class="flex-1">
+                        <div className="flex-1">
                           {product.isSold ? (
-                            <p class="text-green-500 text-xl font-bold">SOLD</p>
+                            <p className="text-green-500 text-xl font-bold">SOLD</p>
                           ) : (
-                            <p class="text-red-500 text-xl font-bold">UNSOLD</p>
+                            <p className="text-red-500 text-xl font-bold">UNSOLD</p>
                           )}
                         </div>
                       </div>
-                      <p class="text-gray-500">{product.desc}</p>
+                      <p className="text-gray-500">{product.desc}</p>
 
-                      <div class="flex py-4 space-x-4">
+                      <div className="flex py-4 space-x-4">
                         <button
                           onClick={() => setshowModal(false)}
                           type="button"
-                          class="h-10 px-6  font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white"
+                          className="h-10 px-6  font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white"
                         >
                           Close
                         </button>

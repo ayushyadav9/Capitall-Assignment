@@ -12,7 +12,6 @@ export default function Navbar() {
   const navigate = useNavigate();
   useEffect(() => {
     let url = window.location.pathname;
-    console.log(url);
     if (url === "/") {
       setactive(0);
     } else if (url === "/addProduct") {

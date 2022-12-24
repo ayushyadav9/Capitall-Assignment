@@ -18,7 +18,6 @@ const Items = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setProducts(data.data);
       });
   }, []);
@@ -29,12 +28,12 @@ const Items = () => {
           Products Purchased by <span className="text-indigo-600">You</span>
         </h3>
       </div>
-      <div class="container my-12 mx-auto px-4 md:px-8">
+      <div className="container my-12 mx-auto px-4 md:px-8">
         {products ? (
           products.length > 0 ? (
-            <div class="flex flex-wrap -mx-1 lg:-mx-4">
+            <div className="flex flex-wrap -mx-1 lg:-mx-4">
               {products.map((product) => (
-                <Item key={product.id} product={product} />
+                <Item key={product._id} product={product} />
               ))}
             </div>
           ) : (

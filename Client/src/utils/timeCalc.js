@@ -33,7 +33,6 @@ export const getDateAndTime = (millis) => {
   var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
   var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
 
-  // console.log(diffDays + " days, " + diffHrs + " hours, " + diffMins + " minutes");
   if (diffDays > 0 && diffDays < 70) return diffDays + " day ago";
   if (diffDays >= 7 && diffDays <= 30) return (diffDays % 7) + " week ago";
   if (diffDays > 30) return func(millis);
@@ -42,11 +41,11 @@ export const getDateAndTime = (millis) => {
 };
 
 export const chatTime = (millis) => {
-  var date_format = "12"; /* FORMAT CAN BE 12 hour (12) OR 24 hour (24)*/
+  var date_format = "12"; 
 
   var d = new Date(millis);
-  var hour = d.getHours(); /* Returns the hour (from 0-23) */
-  var minutes = d.getMinutes(); /* Returns the minutes (from 0-59) */
+  var hour = d.getHours(); 
+  var minutes = d.getMinutes();
   var result = hour;
   var ext = "";
 
