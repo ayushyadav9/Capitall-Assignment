@@ -13,11 +13,11 @@
 
 ## Step 1. Clone the project
 ```
-git clone https://github.com/ayushyadav9/eKYC-Portal
+git clone https://github.com/ayushyadav9/Capitall-Assignment
 ```
 ## Step 2. Install Server dependencies
 ```
-$ cd server
+$ cd Server
 $ npm install
 ```
 ## Step 3. Create .env file and set environment variables
@@ -36,7 +36,7 @@ Server will be runing at : http://localhost:5000
 
 ## Step 6. Now Install Client dependencies
 ```
-$ cd client
+$ cd Client
 $ npm install
 ```
 
